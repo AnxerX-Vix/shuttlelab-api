@@ -24,6 +24,7 @@
 
 ## 4. Pemanggilan Skills
 - Cek folder `.agents/skills/` dan terapkan instruksi yang relevan sebelum mengeksekusi tugas:
-  - Gunakan `impeccable` saat merancang UI/UX, tata letak mobile, tipografi, dan palet warna.
-  - Gunakan `ponytail` saat menyusun struktur folder dan memisahkan tanggung jawab antar file.
-  - Gunakan `anti-slop` untuk meninjau kebersihan dan kesederhanaan kode.
+  - Gunakan `impeccable` (dan sub-skill terkait: `frontend-design`, `critique`, `distill`, `clarify`, `polish`, `bolder`, `typeset`, `audit`) saat merancang UI/UX, tata letak mobile-first, tipografi, dan polishing tampilan.
+  - Gunakan `stop-slop` untuk mengeliminasi gaya bahasa klise AI dan menulis copywriting yang natural, ringkas, serta menggunakan istilah asli komunitas.
+  - Gunakan `ponytail` saat menyusun struktur folder modular, prinsip YAGNI, dan pemisahan tanggung jawab file.
+  - Gunakan `caveman` untuk komunikasi padat, to-the-point, dan bebas basa-basi.

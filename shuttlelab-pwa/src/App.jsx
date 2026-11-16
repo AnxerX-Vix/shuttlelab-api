@@ -13,19 +13,19 @@ export const App = () => {
   const getHeaderProps = () => {
     const path = location.pathname;
     if (path === '/gears' || path === '/') {
-      return { title: 'ShuttleLab', subtitle: 'Katalog Perlengkapan Badminton' };
+      return { title: 'Katalog Gear', subtitle: 'Raket, sepatu & perlengkapan' };
     }
     if (path.startsWith('/gears/')) {
       return { title: 'Spesifikasi Gear', showBack: true };
     }
     if (path === '/techniques') {
-      return { title: 'Panduan Teknik', subtitle: 'Kuasai Footwork & Pukulan' };
+      return { title: 'Drill Teknik', subtitle: 'Footwork & pukulan lapangan' };
     }
     if (path.startsWith('/techniques/')) {
-      return { title: 'Detail Panduan', showBack: true };
+      return { title: 'Detail Drill', showBack: true };
     }
     if (path === '/profile') {
-      return { title: 'Profil & Wishlist', subtitle: 'Praktikan PPB 2026' };
+      return { title: 'Profil & Simpanan', subtitle: 'Informasi praktikan & offline gear' };
     }
     return { title: 'ShuttleLab' };
   };
@@ -33,9 +33,9 @@ export const App = () => {
   const { title, subtitle, showBack } = getHeaderProps();
 
   return (
-    <div className="max-w-md mx-auto min-h-screen bg-slate-50 pb-20 shadow-sm relative flex flex-col">
+    <div className="max-w-md mx-auto min-h-screen bg-slate-50 pb-20 shadow-xs relative flex flex-col">
       <Header title={title} subtitle={subtitle} showBack={showBack} />
-      <main className="flex-1 px-4 py-4">
+      <main className="flex-1 px-4 py-3.5">
         <Routes>
           <Route path="/" element={<Navigate to="/gears" replace />} />
           <Route path="/gears" element={<GearListPage />} />
