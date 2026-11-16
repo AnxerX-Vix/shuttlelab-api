@@ -4,7 +4,6 @@ import {
   Trash2,
   ExternalLink,
   Layers,
-  Sparkles,
   Info,
 } from 'lucide-react';
 import { useWishlist } from '../hooks/useWishlist';
@@ -14,22 +13,18 @@ export const ProfilePage = () => {
 
   return (
     <div className="space-y-4 pb-4">
-      {/* Praktikan Profile Card */}
+      {/* Profil Pemilik / Praktikan */}
       <div className="bg-white rounded-2xl border border-slate-200 p-4 shadow-2xs space-y-3">
         <div className="flex items-center gap-3">
           <div className="w-12 h-12 rounded-xl bg-slate-900 text-white flex items-center justify-center font-black text-sm tracking-wider shadow-xs shrink-0">
             YS
           </div>
           <div className="min-w-0 flex-1">
-            <div className="inline-flex items-center gap-1 text-[9px] font-extrabold uppercase tracking-wider text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded-full mb-0.5">
-              <Sparkles size={10} />
-              Praktikan PPB 2026
-            </div>
             <h2 className="text-sm font-extrabold text-slate-900 leading-tight truncate">
               Yesaya Sandya Putra Prabaswara
             </h2>
-            <p className="text-xs text-slate-500 font-medium">
-              21120124120012
+            <p className="text-xs text-slate-500 font-medium mt-0.5">
+              NIM 21120124120012
             </p>
           </div>
         </div>
@@ -46,23 +41,15 @@ export const ProfilePage = () => {
         </div>
       </div>
 
-      {/* About App Card */}
+      {/* Tentang Aplikasi */}
       <div className="bg-white rounded-2xl border border-slate-200 p-4 shadow-2xs space-y-2">
         <div className="flex items-center gap-1.5 text-slate-900 font-extrabold text-xs">
           <Info size={15} className="text-emerald-700" />
           <span>Tentang ShuttleLab</span>
         </div>
         <p className="text-xs text-slate-600 leading-relaxed font-normal">
-          ShuttleLab adalah direktori katalog raket, sepatu, dan drill footwork badminton berbasis Progressive Web App (PWA) untuk referensi cepat pemain langsung dari tepi lapangan.
+          ShuttleLab membantu pemain badminton membandingkan spesifikasi raket, sepatu, dan shuttlecock serta mempelajari urutan drill teknik di lapangan.
         </p>
-        <div className="flex items-center gap-1 flex-wrap pt-1 text-[10px] font-bold text-slate-500">
-          <span className="bg-slate-100 px-2 py-0.5 rounded">React</span>
-          <span className="bg-slate-100 px-2 py-0.5 rounded">Vite</span>
-          <span className="bg-slate-100 px-2 py-0.5 rounded">Tailwind</span>
-          <span className="bg-slate-100 px-2 py-0.5 rounded">Express API</span>
-          <span className="bg-slate-100 px-2 py-0.5 rounded">Supabase</span>
-          <span className="bg-emerald-50 text-emerald-800 px-2 py-0.5 rounded">PWA Ready</span>
-        </div>
       </div>
 
       {/* Wishlist Offline Storage Section */}
@@ -112,11 +99,11 @@ export const ProfilePage = () => {
                   className="flex items-center gap-2.5 min-w-0 flex-1"
                 >
                   <img
-                    src={item.image_url || 'https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?w=200&q=80'}
+                    src={item.image_url || '/images/placeholder-gear.svg'}
                     alt={item.name}
                     className="w-12 h-12 rounded-lg object-cover bg-slate-100 shrink-0"
                     onError={(e) => {
-                      e.target.src = 'https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?w=200&q=80';
+                      e.target.src = '/images/placeholder-gear.svg';
                     }}
                   />
                   <div className="min-w-0 flex-1">

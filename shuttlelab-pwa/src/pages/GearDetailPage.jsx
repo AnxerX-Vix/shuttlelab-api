@@ -116,11 +116,11 @@ export const GearDetailPage = () => {
       {/* Main Image Frame */}
       <div className="w-full aspect-[4/3] bg-white rounded-2xl border border-slate-200 p-2 shadow-2xs overflow-hidden flex items-center justify-center">
         <img
-          src={gear.image_url || 'https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?w=800&q=80'}
+          src={gear.image_url || '/images/placeholder-gear.svg'}
           alt={gear.name}
           className="w-full h-full object-cover rounded-xl"
           onError={(e) => {
-            e.target.src = 'https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?w=800&q=80';
+            e.target.src = '/images/placeholder-gear.svg';
           }}
         />
       </div>

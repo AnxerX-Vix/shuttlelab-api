@@ -20,12 +20,12 @@ export const GearCard = ({ gear }) => {
       <div>
         <div className="relative w-full aspect-square bg-slate-100 rounded-xl overflow-hidden mb-2">
           <img
-            src={gear.image_url || 'https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?w=400&q=80'}
+            src={gear.image_url || '/images/placeholder-gear.svg'}
             alt={gear.name}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
             loading="lazy"
             onError={(e) => {
-              e.target.src = 'https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?w=400&q=80';
+              e.target.src = '/images/placeholder-gear.svg';
             }}
           />
           <button

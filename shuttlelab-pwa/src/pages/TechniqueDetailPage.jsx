@@ -89,18 +89,16 @@ export const TechniqueDetailPage = () => {
       </div>
 
       {/* Hero Visual Card */}
-      {technique.image_url && (
-        <div className="w-full aspect-[16/9] bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-2xs">
-          <img
-            src={technique.image_url}
-            alt={technique.name}
-            className="w-full h-full object-cover"
-            onError={(e) => {
-              e.target.style.display = 'none';
-            }}
-          />
-        </div>
-      )}
+      <div className="w-full aspect-[16/9] bg-slate-900 rounded-2xl border border-slate-200 overflow-hidden shadow-2xs">
+        <img
+          src={technique.image_url || '/images/placeholder-technique.svg'}
+          alt={technique.name}
+          className="w-full h-full object-cover"
+          onError={(e) => {
+            e.target.src = '/images/placeholder-technique.svg';
+          }}
+        />
+      </div>
 
       {/* Technique Identity Card */}
       <div className="bg-white rounded-2xl border border-slate-200 p-4 shadow-2xs space-y-2">

@@ -26,32 +26,44 @@ export const TechniqueCard = ({ technique }) => {
   return (
     <Link
       to={`/techniques/${technique.id}`}
-      className="bg-white rounded-2xl border border-slate-200 p-3.5 shadow-xs hover:border-slate-300 active:scale-[0.99] transition-all duration-150 flex flex-col justify-between group"
+      className="bg-white rounded-2xl border border-slate-200 p-3 shadow-xs hover:border-slate-300 active:scale-[0.99] transition-all duration-150 flex flex-col justify-between group"
     >
-      <div>
-        <div className="flex items-center justify-between gap-2 mb-1.5">
-          <span className="text-[10px] font-bold text-slate-600 bg-slate-100 px-2 py-0.5 rounded uppercase tracking-wider">
-            {technique.category}
-          </span>
-          <span
-            className={`text-[10px] font-extrabold px-2 py-0.5 rounded-full border ${badge.style}`}
-          >
-            {badge.label}
-          </span>
+      <div className="flex gap-3 items-start">
+        <div className="w-20 h-20 rounded-xl overflow-hidden bg-slate-900 shrink-0 border border-slate-200/80">
+          <img
+            src={technique.image_url || '/images/placeholder-technique.svg'}
+            alt={technique.name}
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+            onError={(e) => {
+              e.target.src = '/images/placeholder-technique.svg';
+            }}
+          />
         </div>
+        <div className="min-w-0 flex-1">
+          <div className="flex items-center justify-between gap-1.5 mb-1 flex-wrap">
+            <span className="text-[10px] font-bold text-slate-600 bg-slate-100 px-1.5 py-0.5 rounded uppercase tracking-wider">
+              {technique.category}
+            </span>
+            <span
+              className={`text-[9px] font-extrabold px-2 py-0.5 rounded-full border ${badge.style}`}
+            >
+              {badge.label}
+            </span>
+          </div>
 
-        <h3 className="text-sm font-extrabold text-slate-900 group-hover:text-emerald-700 transition-colors tracking-tight">
-          {technique.name}
-        </h3>
+          <h3 className="text-xs font-extrabold text-slate-900 group-hover:text-emerald-700 transition-colors tracking-tight line-clamp-1">
+            {technique.name}
+          </h3>
 
-        <p className="text-xs text-slate-600 mt-1 line-clamp-2 leading-relaxed">
-          {technique.description}
-        </p>
+          <p className="text-[11px] text-slate-500 mt-1 line-clamp-2 leading-relaxed">
+            {technique.description}
+          </p>
+        </div>
       </div>
 
-      <div className="mt-3 pt-2 border-t border-slate-100 flex items-center justify-between text-xs">
+      <div className="mt-2.5 pt-2 border-t border-slate-100 flex items-center justify-between text-xs">
         <div className="flex items-center gap-1.5 text-slate-500 font-medium text-[11px]">
-          <Footprints size={13} className="text-emerald-600" />
+          <Footprints size={12} className="text-emerald-600" />
           <span>{stepCount} langkah gerakan</span>
         </div>
         <div className="flex items-center gap-0.5 text-emerald-700 font-bold text-xs group-hover:translate-x-0.5 transition-transform">
